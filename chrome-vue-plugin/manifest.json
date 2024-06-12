@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Music Download",
+  "version": "1.0.0",
+  "description": "Download music from YouTube",
+  "action": {
+    "default_title": "popup",
+    "default_icon": {
+      "16": "assets/icon/16.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/icon/16.png",
+    "48": "assets/icon/48.png",
+    "128": "assets/icon/128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "js/content.js"
+      ],
+      "matches": [
+        "https://www.kuwo.cn/*",
+        "http://www.kuwo.cn/*",
+        "https://www.kugou.com/*",
+        "http://www.kugou.com/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
